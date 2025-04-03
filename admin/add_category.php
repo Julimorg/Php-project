@@ -1,12 +1,3 @@
-<!-- /*!
-* Author Name: MH RONY.
-* GigHub Link: https://github.com/dev-mhrony
-* Facebook Link:https://www.facebook.com/dev.mhrony
-* Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com
-* Visit My Website : developerrony.com
-
-*/ -->
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -15,54 +6,38 @@ error_reporting(0);
 session_start();
 
 
-if(isset($_POST['submit'] ))
-{
-    if(empty($_POST['c_name']))
-		{
-			$error = '<div class="alert alert-danger alert-dismissible fade show">
+if (isset($_POST['submit'])) {
+    if (empty($_POST['c_name'])) {
+        $error = '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>field Required!</strong>
 															</div>';
-		}
-	else
-	{
-		
-	$check_cat= mysqli_query($db, "SELECT c_name FROM res_category where c_name = '".$_POST['c_name']."' ");
+    } else {
 
-	
-	
-	if(mysqli_num_rows($check_cat) > 0)
-     {
-    	$error = '<div class="alert alert-danger alert-dismissible fade show">
+        $check_cat = mysqli_query($db, "SELECT c_name FROM res_category where c_name = '" . $_POST['c_name'] . "' ");
+
+
+
+        if (mysqli_num_rows($check_cat) > 0) {
+            $error = '<div class="alert alert-danger alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																<strong>Category already exist!</strong>
 															</div>';
-     }
-	else{
-       
-	
-	$mql = "INSERT INTO res_category(c_name) VALUES('".$_POST['c_name']."')";
-	mysqli_query($db, $mql);
-			$success = 	'<div class="alert alert-success alert-dismissible fade show">
+        } else {
+
+
+            $mql = "INSERT INTO res_category(c_name) VALUES('" . $_POST['c_name'] . "')";
+            mysqli_query($db, $mql);
+            $success =     '<div class="alert alert-success alert-dismissible fade show">
 																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 																New Category Added Successfully.</br></div>';
-	
+        }
     }
-	}
-
 }
 
 
 ?>
-<!-- /*!
-* Author Name: MH RONY.
-* GigHub Link: https://github.com/dev-mhrony
-* Facebook Link:https://www.facebook.com/dev.mhrony
-* Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com
-* Visit My Website : developerrony.com
 
-*/ -->
 
 <head>
     <meta charset="utf-8">
@@ -76,15 +51,7 @@ for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@
     <link href="css/style.css" rel="stylesheet">
 
 </head>
-<!-- /*!
-* Author Name: MH RONY.
-* GigHub Link: https://github.com/dev-mhrony
-* Facebook Link:https://www.facebook.com/dev.mhrony
-* Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com
-* Visit My Website : developerrony.com
 
-*/ -->
 
 <body class="fix-header">
     <div class="preloader">
@@ -109,15 +76,7 @@ for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@
                     </ul>
 
                     <ul class="navbar-nav my-lg-0">
-                        <!-- /*!
-* Author Name: MH RONY.
-* GigHub Link: https://github.com/dev-mhrony
-* Facebook Link:https://www.facebook.com/dev.mhrony
-* Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com
-* Visit My Website : developerrony.com
 
-*/ -->
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/user-icn.png" alt="user" class="profile-pic" /></a>
@@ -131,15 +90,7 @@ for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@
                 </div>
             </nav>
         </div>
-        <!-- /*!
-* Author Name: MH RONY.
-* GigHub Link: https://github.com/dev-mhrony
-* Facebook Link:https://www.facebook.com/dev.mhrony
-* Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com
-* Visit My Website : developerrony.com
 
-*/ -->
         <div class="left-sidebar">
 
             <div class="scroll-sidebar">
@@ -168,15 +119,7 @@ for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@
                             </ul>
                         </li>
                         <li> <a href="all_orders.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Orders</span></a></li>
-                        <!-- /*!
-* Author Name: MH RONY.
-* GigHub Link: https://github.com/dev-mhrony
-* Facebook Link:https://www.facebook.com/dev.mhrony
-* Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com
-* Visit My Website : developerrony.com
 
-*/ -->
                     </ul>
                 </nav>
 
@@ -186,21 +129,13 @@ for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@
 
         <div class="page-wrapper">
             <div style="padding-top: 10px;">
-                <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a> is the sole owner of this script. It is not suitable for personal use. And releasing it in demo version. Besides, it is being provided for free only from <a href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a>. For any of your problems contact us on <a href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a> facebook group / page or message <a href="https://www.facebook.com/dev.mhrony">MH RONY</a> on facebook. Thanks for staying with <a href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a>.</marquee>
+                <!-- <marquee onMouseOver="this.stop()" onMouseOut="this.start()"> <a href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a> is the sole owner of this script. It is not suitable for personal use. And releasing it in demo version. Besides, it is being provided for free only from <a href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a>. For any of your problems contact us on <a href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a> facebook group / page or message <a href="https://www.facebook.com/dev.mhrony">MH RONY</a> on facebook. Thanks for staying with <a href="https://www.youtube.com/@codecampbdofficial">Code Camp BD</a>.</marquee> -->
             </div>
 
             <div class="container-fluid">
 
 
-                <!-- /*!
-* Author Name: MH RONY.
-* GigHub Link: https://github.com/dev-mhrony
-* Facebook Link:https://www.facebook.com/dev.mhrony
-* Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com
-* Visit My Website : developerrony.com
 
-*/ -->
 
                 <div class="row">
 
@@ -210,9 +145,9 @@ for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@
 
 
 
-                        <?php  
-									        echo $error;
-									        echo $success; ?>
+                        <?php
+                        echo $error;
+                        echo $success; ?>
 
 
 
@@ -225,15 +160,7 @@ for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@
                                 </div>
                                 <form action='' method='post'>
                                     <div class="form-body">
-                                        <!-- /*!
-* Author Name: MH RONY.
-* GigHub Link: https://github.com/dev-mhrony
-* Facebook Link:https://www.facebook.com/dev.mhrony
-* Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com
-* Visit My Website : developerrony.com
 
-*/ -->
                                         <hr>
                                         <div class="row p-t-20">
                                             <div class="col-md-12">
@@ -258,15 +185,7 @@ for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@
 
                 <div class="col-12">
 
-                    <!-- /*!
-* Author Name: MH RONY.
-* GigHub Link: https://github.com/dev-mhrony
-* Facebook Link:https://www.facebook.com/dev.mhrony
-* Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com
-* Visit My Website : developerrony.com
 
-*/ -->
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Listed Categories</h4>
@@ -284,57 +203,34 @@ for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <!-- /*!
-* Author Name: MH RONY.
-* GigHub Link: https://github.com/dev-mhrony
-* Facebook Link:https://www.facebook.com/dev.mhrony
-* Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com
-* Visit My Website : developerrony.com
 
-*/ -->
 
                                         <?php
-												$sql="SELECT * FROM res_category order by c_id desc";
-												$query=mysqli_query($db,$sql);
-												
-													if(!mysqli_num_rows($query) > 0 )
-														{
-															echo '<td colspan="7"><center>No Categories-Data!</center></td>';
-														}
-													else
-														{				
-																	while($rows=mysqli_fetch_array($query))
-																		{
-																					
-																				
-																				
-																					echo ' <tr><td>'.$rows['c_id'].'</td>
-																								<td>'.$rows['c_name'].'</td>
-																								<td>'.$rows['date'].'</td>
+                                        $sql = "SELECT * FROM res_category order by c_id desc";
+                                        $query = mysqli_query($db, $sql);
+
+                                        if (!mysqli_num_rows($query) > 0) {
+                                            echo '<td colspan="7"><center>No Categories-Data!</center></td>';
+                                        } else {
+                                            while ($rows = mysqli_fetch_array($query)) {
+
+
+
+                                                echo ' <tr><td>' . $rows['c_id'] . '</td>
+																								<td>' . $rows['c_name'] . '</td>
+																								<td>' . $rows['date'] . '</td>
 																								
-																									 <td><a href="delete_category.php?cat_del='.$rows['c_id'].'" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
-																									 <a href="update_category.php?cat_upd='.$rows['c_id'].'" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="fa fa-edit"></i></a>
+																									 <td><a href="delete_category.php?cat_del=' . $rows['c_id'] . '" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
+																									 <a href="update_category.php?cat_upd=' . $rows['c_id'] . '" " class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="fa fa-edit"></i></a>
 																									</td></tr>';
-																					 
-																						
-																						
-																		}	
-														}
-												
-											
-											?>
+                                            }
+                                        }
 
 
-                                        <!-- /*!
-* Author Name: MH RONY.
-* GigHub Link: https://github.com/dev-mhrony
-* Facebook Link:https://www.facebook.com/dev.mhrony
-* Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com
-* Visit My Website : developerrony.com
+                                        ?>
 
-*/ -->
+
+
                                     </tbody>
                                 </table>
                             </div>
@@ -343,15 +239,7 @@ for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@
                 </div>
 
 
-                <!-- /*!
-* Author Name: MH RONY.
-* GigHub Link: https://github.com/dev-mhrony
-* Facebook Link:https://www.facebook.com/dev.mhrony
-* Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com
-* Visit My Website : developerrony.com
 
-*/ -->
 
 
 
@@ -375,14 +263,6 @@ for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@
     <script src="js/custom.min.js"></script>
 
 </body>
-<!-- /*!
-* Author Name: MH RONY.
-* GigHub Link: https://github.com/dev-mhrony
-* Facebook Link:https://www.facebook.com/dev.mhrony
-* Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com
-* Visit My Website : developerrony.com
 
-*/ -->
 
 </html>

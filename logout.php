@@ -6,7 +6,7 @@
                         Visit My Website : developerrony.com -->
 <?php
 session_start(); 
-session_destroy(); 
+session_destroy(); //huỷ hết các session
 $url = 'login.php';
 header('Location: ' . $url); 
 

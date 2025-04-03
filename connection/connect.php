@@ -9,10 +9,10 @@
 
       */
 //main connection file for both admin & front end
-$servername = "localhost"; //server
+$servername = "localhost:3307"; //server
 $username = "root"; //username
 $password = ""; //password
-$dbname = "db";  //database
+$dbname = "resraunt_db";  //database
 
 // Create connection
 $db = mysqli_connect($servername, $username, $password, $dbname); // connecting 

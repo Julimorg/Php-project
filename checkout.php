@@ -5,6 +5,15 @@ include("connection/connect.php");
 include_once 'product-action.php';
 error_reporting(0);
 session_start();
+// function consoleLog($msg) {
+// 	echo '<script type="text/javascript">' .
+// 	  'console.log(' . $msg . ');</script>';
+// }
+
+$restaurantId = isset($_GET['res_id']) ? htmlspecialchars($_GET['res_id']) : '';
+consoleLog($restaurantId);
+
+
 
 
 function function_alert() { 
@@ -20,8 +29,8 @@ if(empty($_SESSION["user_id"]))
 }
 else{
 
-										  
-												foreach ($_SESSION["cart_item"] as $item)
+                                                //Sẽ được chạy khi user bấm "Order Now" 
+												foreach ($_SESSION["cart_item_$restaurantId"] as $item)
 												{
 											
 												$item_total += ($item["price"]*$item["quantity"]);
@@ -34,7 +43,7 @@ else{
 														mysqli_query($db,$SQL);
 														
                                                         
-                                                        unset($_SESSION["cart_item"]);
+                                                        unset($_SESSION["cart_item_$restaurantId"]);
                                                         unset($item["title"]);
                                                         unset($item["quantity"]);
                                                         unset($item["price"]);

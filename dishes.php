@@ -1,9 +1,4 @@
-<!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
+
 <!DOCTYPE html>
 <html lang="en">
 <?php
@@ -11,15 +6,16 @@ include("connection/connect.php");
 error_reporting(0);
 session_start();
 
+//Chèn nội dung file vào đây
 include_once 'product-action.php'; 
 
+$user_id = $_SESSION['user_id'];
+consoleLog($user_id);
+$ret2=mysqli_query($db,"select * FROM users where u_id='".$user_id."'");
+$row=mysqli_fetch_array($ret2);
+// consoleLog($row)
 ?>
-<!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
+
 
 
 <head>
@@ -38,12 +34,7 @@ include_once 'product-action.php';
 </head>
 
 <body>
-    <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
+    
 
     <header id="header" class="header-scroll top-header headrom">
         <nav class="navbar navbar-dark">
@@ -70,12 +61,7 @@ include_once 'product-action.php';
 							}
 
 						?>
-                        <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
+                        
 
                     </ul>
                 </div>
@@ -107,12 +93,7 @@ include_once 'product-action.php';
                                 <figure><?php echo '<img src="admin/Res_img/'.$rows['image'].'" alt="Restaurant logo">'; ?></figure>
                             </div>
                         </div>
-                        <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
+                        
 
                         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 profile-desc">
                             <div class="pull-left right-text white-txt">
@@ -120,20 +101,13 @@ include_once 'product-action.php';
                                 <p><?php echo $rows['address']; ?></p>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
         </section>
         <div class="breadcrumb">
             <div class="container">
-                <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
+                
 
             </div>
         </div>
@@ -153,18 +127,19 @@ include_once 'product-action.php';
                         <div class="order-row bg-white">
                             <div class="widget-body">
 
-                                <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
+                                
 
                                 <?php
 
 $item_total = 0;
 
-foreach ($_SESSION["cart_item"] as $item)  
+
+// $restaurantId = $rows['rs_id'];
+// consoleLog($_SESSION["cart_item_$restaurantId}"]);
+$id = $rows['rs_id'];
+consoleLog($id);
+// echo (count($_SESSION["cart_item_$id}"]));
+foreach ($_SESSION["cart_item_$id"] as $item)  //Lấy ra session đã lưu trước đó cho cart $_SESSION["cart_item"]
 {
 ?>
 
@@ -188,12 +163,7 @@ foreach ($_SESSION["cart_item"] as $item)
 $item_total += ($item["price"]*$item["quantity"]); 
 }
 ?>
-                                <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
+                                
 
 
 
@@ -207,16 +177,26 @@ $item_total += ($item["price"]*$item["quantity"]);
                                 <p>TOTAL</p>
                                 <h3 class="value"><strong><?php echo "$".$item_total; ?></strong></h3>
                                 <p>Free Delivery!</p>
-                                <?php
-                                        if($item_total==0){
-                                        ?>
 
+
+                                <?php 
+                                    if($row['status']!=1){
+                                        consoleLog(-1);
+                                       
+                                
+                                ?>
+                                    <a href="" class="btn btn-danger btn-lg disabled">You been blocked</a>
+                                <?php
+                                        }
+
+                                        if($item_total==0 && $row['status']==1){
+                                        ?>
 
                                 <a href="checkout.php?res_id=<?php echo $_GET['res_id'];?>&action=check" class="btn btn-danger btn-lg disabled">Checkout</a>
 
                                 <?php
                                         }
-                                        else{   
+                                        else if ($row['status']==1){   
                                         ?>
                                 <a href="checkout.php?res_id=<?php echo $_GET['res_id'];?>&action=check" class="btn btn-success btn-lg active">Checkout</a>
                                 <?php   
@@ -227,12 +207,7 @@ $item_total += ($item["price"]*$item["quantity"]);
                         </div>
 
 
-                        <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
+                        
 
 
                     </div>
@@ -264,14 +239,8 @@ $item_total += ($item["price"]*$item["quantity"]);
 													
 													 
 													 ?>
-                            <!--  Author Name: MH RONY.
-                                                     GigHub Link: https://github.com/dev-mhrony
-                                                     Facebook Link:https://www.facebook.com/dev.mhrony
-                                                     Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                                                     for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                                                     Visit My Website : developerrony.com -->
 
-                            <div class="food-item">
+                            <div class="food-item"> <!-- Food item-->
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-lg-8">
                                         <form method="post" action='dishes.php?res_id=<?php echo $_GET['res_id'];?>&action=add&id=<?php echo $product['d_id']; ?>'>
@@ -295,12 +264,7 @@ $item_total += ($item["price"]*$item["quantity"]);
                                 </div>
 
                             </div>
-                            <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
+                            
 
 
                             <?php
@@ -321,12 +285,7 @@ $item_total += ($item["price"]*$item["quantity"]);
             </div>
 
         </div>
-        <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
+        
 
 
         <?php include "include/footer.php" ?>
@@ -334,14 +293,10 @@ $item_total += ($item["price"]*$item["quantity"]);
     </div>
 
     </div>
-    <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
+    
+    <!-- Không liên quan -->
 
-    <div class="modal fade" id="order-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- <div class="modal fade" id="order-modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
@@ -358,12 +313,7 @@ $item_total += ($item["price"]*$item["quantity"]);
                                 </div>
 
                             </div>
-                            <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
+                            
                             <div class="col-xs-6 col-sm-2 col-lg-2 text-xs-center"> <span class="price pull-left">$ 2.99</span></div>
                             <div class="col-xs-6 col-sm-4 col-lg-4">
                                 <div class="row no-gutter">
@@ -395,12 +345,7 @@ $item_total += ($item["price"]*$item["quantity"]);
                                 </div>
 
                             </div>
-                            <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
+                            
                             <div class="col-xs-6 col-sm-2 col-lg-2 text-xs-center"> <span class="price pull-left">$ 2.49</span></div>
                             <div class="col-xs-6 col-sm-4 col-lg-4">
                                 <div class="row no-gutter">
@@ -432,12 +377,7 @@ $item_total += ($item["price"]*$item["quantity"]);
                                 </div>
 
                             </div>
-                            <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
+                            
                             <div class="col-xs-6 col-sm-2 col-lg-2 text-xs-center"> <span class="price pull-left">$ 1.99</span></div>
                             <div class="col-xs-6 col-sm-4 col-lg-4">
                                 <div class="row no-gutter">
@@ -469,12 +409,7 @@ $item_total += ($item["price"]*$item["quantity"]);
                                 </div>
 
                             </div>
-                            <!--  Author Name: MH RONY.
-                        GigHub Link: https://github.com/dev-mhrony
-                        Facebook Link:https://www.facebook.com/dev.mhrony
-                        Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-                        for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
-                        Visit My Website : developerrony.com -->
+                            
                             <div class="col-xs-6 col-sm-2 col-lg-2 text-xs-center"> <span class="price pull-left">$ 3.15</span></div>
                             <div class="col-xs-6 col-sm-4 col-lg-4">
                                 <div class="row no-gutter">
@@ -501,7 +436,7 @@ $item_total += ($item["price"]*$item["quantity"]);
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <script src="js/jquery.min.js"></script>
     <script src="js/tether.min.js"></script>

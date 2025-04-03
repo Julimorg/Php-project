@@ -1,26 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300i,400,600,700,800");
 @import url(../icons/font-awesome/css/font-awesome.min.css);
-@import url(../icons/simple-line-icons/css/simple-line-icons.css);
-@import url(../icons/weather-icons/css/weather-icons.min.css);
-@import url(../icons/linea-icons/linea.css);
+/* @import url(../icons/simple-line-icons/css/simple-line-icons.css); */
+/* @import url(../icons/weather-icons/css/weather-icons.min.css); */
+/* @import url(../icons/linea-icons/linea.css); */
 @import url(../icons/themify-icons/themify-icons.css);
-@import url(../icons/flag-icon-css/flag-icon.min.css);
+/* @import url(../icons/flag-icon-css/flag-icon.min.css); */
 @import url(../icons/material-design-iconic-font/css/materialdesignicons.min.css);
 @import url(spinners.css);
 @import url(animate.css);
 /*
-/*!
- *  Author Name: MH RONY.
- *  GigHub Link: https://github.com/dev-mhrony
- *  Facebook Link:https://www.facebook.com/dev.mhrony
- *  Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-    for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
- *  Visit My Website : developerrony.com 
-
-      
-    Table of Content
-    ================
-
 1. variable
 2. fonts
 3. card
@@ -185,15 +173,7 @@ h6 {
   position: absolute;
   top: calc(46.5%);
   left: calc(46.5%);
-} /*!
- *  Author Name: MH RONY.
- *  GigHub Link: https://github.com/dev-mhrony
- *  Facebook Link:https://www.facebook.com/dev.mhrony
- *  Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-    for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
- *  Visit My Website : developerrony.com 
-
-      */
+} 
 #main-wrapper {
   width: 100%;
 }
@@ -2125,9 +2105,9 @@ textarea {
   stroke-linejoin: round;
   stroke-linecap: round;
   stroke-dasharray: 500%;
-  stroke-dasharray: 0 /;
+  stroke-dasharray: 0;
   /* fixes IE prob */
-  stroke-dashoffset: 0 /;
+  stroke-dashoffset: 0;
   /* fixes IE prob */
   -webkit-animation: am-draw 40s;
   animation: am-draw 40s;
@@ -7152,12 +7132,4 @@ tbody tr td:last-child {
     display: inline-block !important;
   }
 }
-/*!
- *  Author Name: MH RONY.
- *  GigHub Link: https://github.com/dev-mhrony
- *  Facebook Link:https://www.facebook.com/dev.mhrony
- *  Youtube Link: https://www.youtube.com/channel/UChYhUxkwDNialcxj-OFRcDw
-    for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@gmail.com  
- *  Visit My Website : developerrony.com 
 
-      */
